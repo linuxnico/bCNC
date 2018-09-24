@@ -832,7 +832,7 @@ class Sender:
 		self.feedHold()
 		self._stop = True
 		# if we are in the process of submitting do not do anything
-		if self._runLines != sys.maxint:
+		if self._runLines != sys.maxsize:
 			self.purgeController()
 
 	#----------------------------------------------------------------------
@@ -959,11 +959,10 @@ class Sender:
 				if tosend is not None:
 					# All modification in tosend should be
 					# done before adding it to cline
-					if isinstance(tosend, unicode):
-						tosend = tosend.encode("ascii","replace")
-
+					#if isinstance(tosend, str):
+					tosend = tosend.encode("ascii","replace")
 					# Keep track of last feed
-					pat = FEEDPAT.match(tosend)
+					pat = FEEDPAT.match(tosend.decode())
 					if pat is not None:
 						self._lastFeed = pat.group(2)
 
@@ -1252,7 +1251,7 @@ class Sender:
 				# WARNING if runLines==maxint then it means we are
 				# still preparing/sending lines from from bCNC.run(),
 				# so don't stop
-				if self._runLines != sys.maxint:
+				if self._runLines != sys.maxsize: #maxint:
 					self._stop = False
 
 			#print "tosend='%s'"%(repr(tosend)),"stack=",sline,

@@ -1578,8 +1578,8 @@ class ToolFrame(CNCRibbon.PageFrame):
 
 	#-----------------------------------------------------------------------
 	def saveConfig(self):
-		Utils.setInt(  "Probe", "toolpolicy",  TOOL_POLICY.index(self.toolPolicy.get().encode("utf8")))
-		Utils.setInt(  "Probe", "toolwait",    TOOL_WAIT.index(self.toolWait.get().encode("utf8")))
+		Utils.setInt(  "Probe", "toolpolicy",  TOOL_POLICY.index(self.toolPolicy.get())) #.encode("utf8")))
+		Utils.setInt(  "Probe", "toolwait",    TOOL_WAIT.index(self.toolWait.get())) #.encode("utf8")))
 		Utils.setFloat("Probe", "toolchangex", self.changeX.get())
 		Utils.setFloat("Probe", "toolchangey", self.changeY.get())
 		Utils.setFloat("Probe", "toolchangez", self.changeZ.get())
@@ -1660,7 +1660,6 @@ class ToolFrame(CNCRibbon.PageFrame):
 
 	#-----------------------------------------------------------------------
 	def policyChange(self):
-		print(TOOL_POLICY)
 		CNC.toolPolicy = int(TOOL_POLICY.index(self.toolPolicy.get())) #.encode("utf-8"))) or 0
 
 	#-----------------------------------------------------------------------

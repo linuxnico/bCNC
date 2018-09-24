@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//plugins/text.py=ascii
 encoding/Ribbon.py=ascii
+encoding/Sender.py=ascii
 encoding/Utils.py=ascii
 encoding/bCNC.py=ascii
