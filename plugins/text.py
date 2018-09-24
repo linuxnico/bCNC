@@ -44,12 +44,12 @@ class Tool(Plugin):
 	# ----------------------------------------------------------------------
 	def execute(self, app):
 
-		#Get inputs
+    	#Get inputs
 		fontSize      = self.fromMm("FontSize")
 		depth         = self.fromMm("Depth")
 		textToWrite   = self["Text"]
 		fontFileName  = self["FontFile"]
-                closed        = self["Closed"]
+		closed        = self["Closed"]
 		imageFileName = self["ImageToAscii"]
 		charsWidth    = self["CharsWidth"]
 

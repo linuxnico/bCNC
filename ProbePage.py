@@ -1660,11 +1660,12 @@ class ToolFrame(CNCRibbon.PageFrame):
 
 	#-----------------------------------------------------------------------
 	def policyChange(self):
-		CNC.toolPolicy = int(TOOL_POLICY.index(self.toolPolicy.get().encode("utf8")))
+		print(TOOL_POLICY)
+		CNC.toolPolicy = int(TOOL_POLICY.index(self.toolPolicy.get())) #.encode("utf-8"))) or 0
 
 	#-----------------------------------------------------------------------
 	def waitChange(self):
-		CNC.toolWaitAfterProbe = int(TOOL_WAIT.index(self.toolWait.get().encode("utf8")))
+		CNC.toolWaitAfterProbe = int(TOOL_WAIT.index(self.toolWait.get())) #.encode("utf8")))
 
 	#-----------------------------------------------------------------------
 	def getChange(self):
