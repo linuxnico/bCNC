@@ -13,6 +13,8 @@ You will need the following packages to run bCNC
   Depending your python/OS it can either be already installed,
   or under the names tkinter, python-tkinter, python-tk
 - pyserial or under the name python-serial, python-pyserial
+- scipy
+- enum34
 - Optionally:
 - python-imaging-tk: the PIL libraries for autolevel height map
 - python-opencv: for webcam streaming on web pendant
